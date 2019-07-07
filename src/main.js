@@ -3,6 +3,8 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import headerTable from './components/header/header'
+
 
 Vue.config.productionTip = false
 
