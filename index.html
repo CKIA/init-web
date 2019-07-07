@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>ckia博客</title>
-    <style type= "text/css">
-        html,body {
+    <!-- <style type= "text/css">
+        /* html,body {
           width :80%; height:auto; margin:0 auto;
           -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
           -moz-box-shadow:0px 3px 3px #c8c8c8 ;
           box-shadow:0px 3px 3px #c8c8c8 ;
-        }
-        #Container {
+        } */
+        /* #Container {
           position :relative ;height: auto;}
         #Header-info {
           position :fixed; top: 0px; width :80%; height: 25px;z-index:9999; background-color:#c8c8c8 ;
@@ -21,22 +21,22 @@
         }
         #Header {position :fixed; top: 25px; width :80%; height: 50px;z-index:9999; background-color:#c8c8c8 }
         #Content {position :relative ; width :100%; height:100%;}
-        /* #Content-left {position :fixed;top: 65px; left: 5%; width :10%; height:500px; float:left;background-color: #eaf0ea;} */
+        #Content-left {position :fixed;top: 65px; left: 5%; width :10%; height:500px; float:left;background-color: #eaf0ea;}
         #Content-centre {position :relative;top: 75px; width :100%; z-index:9998;height:auto;margin: auto;}
         #Content-right {position :fixed;top: 75px;right: 10%; width :15%; z-index:9997;height: 500px;}
-        #Footer {position :relative ; height: 50px;z-index:-1;bottom:-70px;text-align:center;}  
+        #Footer {position :relative ; height: 50px;z-index:-1;bottom:-70px;text-align:center;}   */
         
 
-    </style>
+    </style> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.12/vue.js"></script>
-    <!-- import iView -->
-    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
     <!-- import stylesheet -->
     <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
+    <!-- import iView -->
+    <script src="//unpkg.com/iview/dist/iview.min.js"></script>
   </head>
   <body>
     <!-- 此处用了传统的三段式结构:Container代表整个容器，Header代表容器的上部，Content代表容器的中部也就是内容部分，Footer代表容器的底部 -->
-    <div id="Container">
+    <!-- <div id="Container">
         <div id= "Header-info">
             Header-info 
         </div>
@@ -44,9 +44,9 @@
           <div id="headerTable">dfs</div>
         </div>
         <div id = "Content">
-            <!-- <div id="Content-left" >
+            <div id="Content-left" >
               左
-            </div>  -->
+            </div>
             <div id="Content-centre" >                
               <div id="app"></div>
             </div>
@@ -58,7 +58,27 @@
         <div id= "Footer">
             <span>喜欢的请关注哦!</span>
         </div>
-    </div>
+    </div> -->
+    <div id="Content-centre" >                
+        <div id="app"></div>
+      </div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+    Vue.use(iview);
+    new Vue({
+        el: '#app',
+        component:{
+            iview
+        },
+        data: {
+            visible: false
+        },
+        methods: {
+            show: function () {
+                this.visible = true;
+            }
+        }
+    })
+  </script>
 </html>
