@@ -14,16 +14,16 @@
         #Container {
           position :relative ;height: auto;}
         #Header-info {
-          position :fixed; top: 0px; width :80%; height: 25px;z-index:9999; background-color:#c8c8c8 ;
+          position :fixed; top: 0px; width :80%; height: 30px;z-index:9999; background-color:#D6002A ;
           -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
           -moz-box-shadow:0px 3px 3px #c8c8c8 ;
           box-shadow:0px 3px 3px #c8c8c8 ;
         }
-        #Header {position :fixed; top: 25px; width :80%; height: 50px;z-index:9999; background-color:#c8c8c8 }
+        #Header {position :fixed; top: 30px; width :80%; height: 50px;z-index:9999; background-color:#c8c8c8 }
         #Content {position :relative ; width :100%; height:100%;}
         /* #Content-left {position :fixed;top: 65px; left: 5%; width :10%; height:500px; float:left;background-color: #eaf0ea;} */
-        #Content-centre {position :relative;top: 75px; width :100%; z-index:9998;height:auto;margin: auto;}
-        #Content-right {position :fixed;top: 75px;right: 10%; width :15%; z-index:9997;height: 500px;}
+        #Content-centre {position :relative;top: 80px; width :100%; z-index:9998;height:auto;margin: auto;}
+        #Content-right {position :fixed;top: 80px;right: 10%; width :15%; z-index:9997;height: 500px;}
         #Footer {position :relative ; height: 50px;z-index:-1;bottom:-70px;text-align:center;}  
         
 
@@ -34,14 +34,37 @@
     <!-- import stylesheet -->
     <link rel="stylesheet" href="//unpkg.com/iview/dist/styles/iview.css">
   </head>
+  <script type="text/javascript">
+    // window.onload =
+    function df (){
+      console.log("this window.onload");
+      var example1 = new Vue({
+        el: '#example-1',
+        data: {
+          counter: 0
+        }
+      })
+    }
+    function btn(){
+      console.log('im butten');
+      console.log(myVue);
+      console.log($this.$router);
+      console.log(Vue.$router);
+      Vue.$router.push({
+          path: `/header`,
+        })
+    }
+  </script>
   <body>
     <!-- 此处用了传统的三段式结构:Container代表整个容器，Header代表容器的上部，Content代表容器的中部也就是内容部分，Footer代表容器的底部 -->
     <div id="Container">
         <div id= "Header-info">
-            Header-info 
+            <ul>
+              <a style="position: absolute;width:40px;right: 20px;z-index:9999;">aa</a>
+            </ul>
         </div>
         <div id= "Header">
-          <div id="headerTable">dfs</div>
+          <button onclick="btn()">dfs</button>
         </div>
         <div id = "Content">
             <!-- <div id="Content-left" >
@@ -51,7 +74,10 @@
               <div id="app"></div>
             </div>
             <div id="Content-right" >
-              右
+              <div id="example-1">
+                  <button v-on:click="counter += 1">Add 1</button>
+                  <p>The button above has been clicked {{ counter }} times.</p>
+              </div>
             </div> 
         </div>
 
@@ -61,4 +87,5 @@
     </div>
     <!-- built files will be auto injected -->
   </body>
+  
 </html>

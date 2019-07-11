@@ -9,7 +9,7 @@ import headerTable from './components/header/header'
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
-new Vue({
+let myVue = new Vue({
   el: '#app',
   router,
   components: { App },
