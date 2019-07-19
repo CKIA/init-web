@@ -11,13 +11,13 @@
         #Container {
           position :relative ;left: 10%; width :80%;height: auto;
           font-family: 'Avenir', Helvetica, Arial, sans-serif;
-          -webkit-font-smoothing: antialiased;
-          -moz-osx-font-smoothing: grayscale;
+          /* -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale; */
           text-align: center;
           color: #2c3e50;
         }
         #Content {position :relative ;right: 15%;top: 150px;width :100%; height:auto;}
-        #Footer {position :relative ; height: 50px;z-index:-1;bottom:-70px;text-align:center;}
+        #Footer {position :relative ;right: 15%; height: 50px;z-index:-1;bottom:-155px;text-align:center;}
         
 
     </style>
@@ -31,10 +31,11 @@
     <!-- 此处用了传统的三段式结构:Container代表整个容器，Header代表容器的上部，Content代表容器的中部也就是内容部分，Footer代表容器的底部 -->
     <div id="Container">
       <div id="app"></div>
+      <!-- built files will be auto injected -->
       <div id= "Footer">
           <span>喜欢的请关注哦!</span>
       </div>
-    <!-- built files will be auto injected -->
+    </div>
   </body>
 
 </html>

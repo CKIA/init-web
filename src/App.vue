@@ -28,15 +28,15 @@ export default {
 
 <style>
 .Content-right {
-  position :fixed;top: 150px;right: 10%; width :15%; z-index:9997;height: 700px;
+  position :fixed;top: 150px;right: 10%; width :15%; z-index:-1;height: 700px;
   -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
   -moz-box-shadow:0px 3px 3px #c8c8c8 ;
   box-shadow:0px 3px 3px #c8c8c8 ;
 }
 .Content-left {
-  position :relative;top: 150px; width :80%; z-index:9997;height: auto;
-  -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
-  -moz-box-shadow:0px 3px 3px #c8c8c8 ;
+  position :relative;top: 150px; width :80%; z-index:-2;height: auto;
+  /* -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
+  -moz-box-shadow:0px 3px 3px #c8c8c8 ; */
   box-shadow:0px 3px 3px #c8c8c8 ;
 }
 

@@ -1,6 +1,6 @@
 <style scoped>
 .layout{
-    position :fixed; top: 100px;right:10%; width :80%; height: 50px;z-index:9999;
+    position :fixed; top: 100px;right:10%; width :80%; height: 50px;z-index:-1;
     overflow: hidden;
 }
 .layout-logo{
@@ -28,9 +28,6 @@
 .layout-footer-center{
     text-align: center;
 }
-.top{
-    top: 10px;
-}
 </style>
 <template>
     <div class="layout">
@@ -41,17 +38,17 @@
                     <Input placeholder="Enter something..." class="layout-logo"/>
                 </div>
                 <div class="layout-nav" > 
-                    <router-link to="/hello3">
-                        <MenuItem name="home" style="top: -5px;" @click.native="alertInfo">
-                            <Icon type="ios-navigate"></Icon>
-                            主页
+                    <!-- <router-link to="/hello3">
+                    </router-link> -->
+                    <MenuItem name="home" style="top: -5px;" on-select=“home” @click.native="alertInfo">
+                        <Icon type="ios-navigate"></Icon>
+                        主页
                     </MenuItem>
-                    </router-link>
-                    <MenuItem name="all" style="top: -5px;">
+                    <MenuItem name="all" style="top: -5px;" on-select=“all”>
                         <Icon type="ios-navigate"></Icon>
                         杂谈
                     </MenuItem>
-                    <MenuItem name="other" style="top: -5px;">
+                    <MenuItem name="other" style="top: -5px;" on-select=other>
                         <Icon type="ios-navigate"></Icon>
                         其他
                     </MenuItem>
