@@ -25,7 +25,7 @@
 <template>
     <div>
         <div class="headerInfo">
-            <div v-if="isLogin()" >
+            <div v-show="isLogin()" >
                 <Badge dot class="info-left">
                     <a href="#">消息</a>
                 </Badge>
@@ -33,23 +33,15 @@
                     <a href="#">我的</a>
                 </Badge>
             </div>
-            <div v-else>
+            <div v-show="!isLogin()">
                 <Badge dot class="info-left">
                     <!-- <a href="#" @click="toLogin">注册</a> -->
-                    <a href="#" @click="handleRender">注册</a>
+                    <a href="#">注册</a>
                 </Badge>
                 <Badge dot class="info-left">
-                    <a href="#">登录</a>
+                    <a href="#" @click="handleRender">登录</a>
                 </Badge>
             </div>
-            <!-- <div v-show="showModal"> -->
-                <!-- <p>
-                    Name: {{ value }}
-                </p>
-                <p>
-                    <Button @click="toLogin">Custom content</Button>
-                </p> -->
-            <!-- </div> -->
         </div>
         <div class="headerImage"></div>
     </div>
@@ -60,10 +52,14 @@
         data(){
             return {
                 showModal:false,
-                value: '',
-                value2: '',
+                name: '',
+                password: '',
                 modal1:false
             }
+        },
+        updated:function(){
+                console.info(this);
+            
         },
         methods:{
             ok () {
@@ -76,7 +72,7 @@
                 alert('dd');
             },
             isLogin:function(){
-                return false;
+                return this.showModal;
             },
             toLogin:function(){
                 this.showModal = true;
@@ -88,61 +84,36 @@
                         h('H5', 'Please enter your name'),
                         h('Input', {
                             props: {
-                                value: this.value,
+                                value: this.name,
                                 autofocus: true,
                                 placeholder: 'Please enter your name...'
                             },
                             on: {
                                 input: (val) => {
-                                    this.value = val;
-                                    console.log(this.value)
+                                    this.name = val;
+                                    console.info(this.name);
                                 }
                             }
                         }),
                         h('H5', 'Please enter your password'),
                         h('Input', {
                             props: {
-                                value: this.value2,
+                                value: this.password,
                                 autofocus: true,
                                 placeholder: 'Please enter your password...'
                             },
                             on: {
                                 input: (val) => {
-                                    this.value2 = val;
-                                    console.log(this.value2)
-                                }
-                            }
-                        }),
-                        h('Input', {
-                            props: {
-                                value: this.value2,
-                                autofocus: true,
-                                placeholder: 'Please enter your password...'
-                            },
-                            on: {
-                                input: (val) => {
-                                    this.value2 = val;
-                                    console.log(this.value2)
-                                }
-                            }
-                        }),
-                        h('Input', {
-                            props: {
-                                value: this.value2,
-                                autofocus: true,
-                                placeholder: 'Please enter your password...'
-                            },
-                            on: {
-                                input: (val) => {
-                                    this.value2 = val;
-                                    console.log(this.value2)
+                                    this.password = val;
+                                    console.info(this.password);
                                 }
                             }
                         })
                     ])
                     },
                     onOk:function(){
-                        alert('dd');
+                        console.info(this);
+                        console.info(this.password+this.name);
                     },
                     onCancel:function(){
                         alert('aa');

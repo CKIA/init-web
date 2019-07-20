@@ -34,7 +34,7 @@ export default {
   box-shadow:0px 3px 3px #c8c8c8 ;
 }
 .Content-left {
-  position :relative;top: 150px; width :80%; z-index:-2;height: auto;
+  position :relative;top: 150px; width :80%; z-index:-2;height: auto;min-height: 700px;
   /* -webkit-box-shadow:0px 3px 3px #c8c8c8 ;
   -moz-box-shadow:0px 3px 3px #c8c8c8 ; */
   box-shadow:0px 3px 3px #c8c8c8 ;
