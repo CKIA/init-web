@@ -46,10 +46,7 @@ let busVm = new Vue();
                 this.$Message.info('Clicked cancel');
             },
             alertInfo:function(){
-                Alert({
-                    title : '注册',
-                    body : 'dfa'
-                })
+                Alert({title : '注册',body : 'dfa'})
             },
             isLogin:function(){
                 return this.showModal;

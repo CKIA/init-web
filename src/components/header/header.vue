@@ -1,12 +1,19 @@
 
 <template>
     <div id="share-header">
-        <div style="width :70%;height: 50px;">
+        <div class="header_left">
             <ul v-for="(hTable,index) in tableList">
                 <li @click="showTab(index)">
                     <div v-bind:class="{selectStyle : selected==index}">{{hTable.name}}</div>
                 </li>
             </ul>
+        </div>
+        <div class="header_seach">
+            <select>
+                <option v-for="(hTable,index) in tableList" value="hTable.index">{{hTable.name}}</option>
+            </select>
+            <input type="text">
+            <button>搜索</button>
         </div>
     </div>
 </template>
@@ -31,8 +38,20 @@
     position :fixed; top: 100px;right:10%; width :80%; height: 50px;z-index:2;
     overflow: hidden;background: #333333;
 }
-#share-header button{
-    height: 30px;width: 100px;top: 10px;
+#share-header .header_left{
+    width :70%;height: 50px;float: left;
+}
+#share-header .header_seach{
+    width: 30%;height: 50px;display: inline;float: left;
+}
+#share-header .header_seach select{
+    width: 35%;height: 30px;display: inline;float: left;margin-top: 10px;
+}
+#share-header .header_seach input{
+    width: 40%;height: 30px;display: inline;float: left; margin-left: 10px;margin-top: 10px;
+}
+#share-header .header_seach button{
+    width: 50px;height: 30px;display: inline;float: right;margin-right: 10px;margin-top: 10px;
 }
 #share-header ul{
     float: left;list-style-type:none;
@@ -48,8 +67,5 @@
     color: #000;
     text-align: center;
     z-index: 10;
-}
-.layout-footer-center{
-    text-align: center;
 }
 </style>
