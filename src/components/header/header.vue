@@ -45,13 +45,13 @@
     width: 30%;height: 50px;display: inline;float: left;
 }
 #share-header .header_seach select{
-    width: 35%;height: 30px;display: inline;float: left;margin-top: 10px;
+    width: 35%;height: 30px;float: left;margin-top: 10px;
 }
 #share-header .header_seach input{
-    width: 40%;height: 30px;display: inline;float: left; margin-left: 10px;margin-top: 10px;
+    width: 40%;height: 30px;float: left; margin-left: 10px;margin-top: 10px;
 }
 #share-header .header_seach button{
-    width: 50px;height: 30px;display: inline;float: right;margin-right: 10px;margin-top: 10px;
+    width: 50px;height: 30px;float: right;margin-right: 10px;margin-top: 10px;
 }
 #share-header ul{
     float: left;list-style-type:none;
