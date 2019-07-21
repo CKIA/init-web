@@ -10,6 +10,7 @@
         </div>
         <div class="header_seach">
             <select>
+                <option selected>请选择</option>
                 <option v-for="(hTable,index) in tableList" value="hTable.index">{{hTable.name}}</option>
             </select>
             <input type="text">
