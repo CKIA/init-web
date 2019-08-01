@@ -12,16 +12,17 @@
         <div v-show="!isLogin()">
             <Badge dot class="info-left">
                 <!-- <a href="#" @click="toLogin">注册</a> -->
-                <a href="#" @click="alertInfo">注册</a>
+                <a href="#" @click="toSign">注册</a>
             </Badge>
             <Badge dot class="info-left">
-                <a href="#" @click="handleRender">登录</a>
+                <a href="#" @click="toLogin">登录</a>
             </Badge>
         </div>
     </div>
 </template>
 <script>
 import Alert from'@/components/alert/alert.js'
+import LoginAlert from'@/components/alert/alertInputList.js'
 
 let busVm = new Vue();
     export default {
@@ -45,58 +46,62 @@ let busVm = new Vue();
             cancel : function () {
                 this.$Message.info('Clicked cancel');
             },
-            alertInfo:function(){
+            toSign:function(){
                 Alert({title : '注册',body : 'dfa'})
             },
             isLogin:function(){
                 return this.showModal;
             },
             toLogin:function(){
-                this.showModal = true;
+                LoginAlert({
+                    title : '请登录',btn_ok : '登录',btn_cen:'取消',
+                    inputList : [{name:'登录名:',value:''},{name:'密码:',value:''}],
+                    });
+                return this.showModal = true;
             },
-            handleRender () {
-                this.$Modal.confirm({
-                    render: (h) => {
-                        return h('div',[
-                        h('H5', 'Please enter your name'),
-                            h('Input', {
-                                props: {
-                                    value: this.name,
-                                    autofocus: true,
-                                    placeholder: 'Please enter your name...'
-                                },
-                                on: {
-                                    input: (val) => {
-                                        this.name = val;
-                                        console.info(this.name);
-                                    }
-                                }
-                            }),
-                            h('H5', 'Please enter your password'),
-                            h('Input', {
-                                props: {
-                                    value: this.password,
-                                    autofocus: true,
-                                    placeholder: 'Please enter your password...'
-                                },
-                                on: {
-                                    input: (val) => {
-                                        this.password = val;
-                                        console.info(this.password);
-                                    }
-                                }
-                            })
-                        ])
-                    },
-                    onOk:function(){
-                        this.toLogin();
-                        console.log(this.$Modal.confirm)
-                    }.bind(this),
-                    onCancel:function(){
-                        alert('aa');
-                    }.bind(this)
-                })
-            }
+            // handleRender () {
+            //     this.$Modal.confirm({
+            //         render: (h) => {
+            //             return h('div',[
+            //             h('H5', 'Please enter your name'),
+            //                 h('Input', {
+            //                     props: {
+            //                         value: this.name,
+            //                         autofocus: true,
+            //                         placeholder: 'Please enter your name...'
+            //                     },
+            //                     on: {
+            //                         input: (val) => {
+            //                             this.name = val;
+            //                             console.info(this.name);
+            //                         }
+            //                     }
+            //                 }),
+            //                 h('H5', 'Please enter your password'),
+            //                 h('Input', {
+            //                     props: {
+            //                         value: this.password,
+            //                         autofocus: true,
+            //                         placeholder: 'Please enter your password...'
+            //                     },
+            //                     on: {
+            //                         input: (val) => {
+            //                             this.password = val;
+            //                             console.info(this.password);
+            //                         }
+            //                     }
+            //                 })
+            //             ])
+            //         },
+            //         onOk:function(){
+            //             this.toLogin();
+            //             console.log(this.$Modal.confirm)
+            //         }.bind(this),
+            //         onCancel:function(){
+            //             alert('aa');
+            //         }.bind(this)
+            //     })
+            // }
         }
     }
 </script>

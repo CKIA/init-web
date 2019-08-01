@@ -13,7 +13,7 @@
     </div>
 </template>
 <script>
-let busVm = new Vue();
+
 export default {
 }
 </script>

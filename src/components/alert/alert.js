@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import alert from './alert.vue'
-
+let busVm = new Vue();
 let routineAlert = (function(){
     let defaluts = {
         title : '提示',

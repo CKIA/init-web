@@ -1,10 +1,12 @@
 import Vue from 'vue'
-import alert from './alert.vue'
+import alert from './alertInputList.vue'
 
 let loginAlert = (function(){
     let defaluts = {
         title : '提示',
-        body : '',
+        btn_ok:'确定',
+        btn_cen:'取消',
+        inputList:[],
         confirm : null,
         cancel : null
     };
@@ -13,15 +15,19 @@ let loginAlert = (function(){
     let loginAlertComponent = Vue.extend(alert);
 
     return function(opts){
-        for(let attr in opts) {
-            defaluts[attr] = opts[attr];
-        }
+
         let vm = new loginAlertComponent({
             el : document.createElement('div'),
             data : {
-                customTitle : defaluts.title,
-                customBody : defaluts.body,
-                confirm : defaluts.confirm,
+                customTitle : opts.title,
+                customBody : opts.body,
+                btn_ok : opts.btn_ok,
+                btn_cen : opts.btn_cen,
+                inputList : opts.inputList,
+                confirm : function(){
+                    console.log(opts.inputList)
+                    this.$emit('loginInputData',opt.inputList)
+                },
                 cancel : defaluts.cancel
             }
         });

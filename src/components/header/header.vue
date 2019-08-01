@@ -31,6 +31,9 @@
             showTab:function(index){
                 this.selected = index;
             }
+        },
+        mounted:function(){
+            
         }
     }
 </script>
