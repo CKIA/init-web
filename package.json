@@ -13,6 +13,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "iview": "^3.4.2",
     "mockserver-node": "^5.5.0",
     "vue": "^2.5.2",
