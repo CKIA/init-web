@@ -5,7 +5,13 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <title>ckia博客</title>
     <style type= "text/css">
-        #Footer {position :relative ;right: 15%; height: 50px;z-index:-1;bottom:-155px;text-align:center;}
+        #Footer {position :relative ;
+        right: 15%; height: 100px;z-index:-1;
+        bottom:-155px;text-align:center;
+        display: flex;
+        justify-content:center;
+        align-items:center;
+    }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/1.0.12/vue.js"></script>
     <!-- import stylesheet -->
@@ -20,9 +26,10 @@
     <!-- 此处用了传统的三段式结构:Container代表整个容器，Header代表容器的上部，Content代表容器的中部也就是内容部分，Footer代表容器的底部 -->
     <div id="app"></div>
     <!-- built files will be auto injected -->
-    <div id= "Footer">
+    <!-- <div id= "Footer">
         <span>喜欢的请关注哦!</span>
-    </div>
+        <img src="src/assets/logo.png" width="100px" height="100px">
+    </div> -->
   </body>
 
 </html>
